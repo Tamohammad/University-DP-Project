@@ -22,14 +22,14 @@ function Login() {
       fetch("http://localhost:4000/api/login")
         .then((response) => response.json())
         .then((data) => {
-          alert("Successfully Login");
+          alert("ورود موفقانه");
           localStorage.setItem("user", JSON.stringify(data));
           authContext.signin(data._id, () => {
             navigate("/");
           });
         })
         .catch((err) => {
-          alert("Wrong credentials, Try again")
+          alert(".معلومات نادرست است، لطفا دوباره کوشش نمایید")
           console.log(err);
         });
     }, 3000);
@@ -38,7 +38,7 @@ function Login() {
   const loginUser = (e) => {
     // Cannot send empty data
     if (form.email === "" || form.password === "") {
-      alert("To login user, enter details to proceed...");
+      alert(".برای وراد شدن به حساب کاربری، جزئیات را وارد کنید تا ادامه دهید");
     } else {
       fetch("http://localhost:4000/api/login", {
         method: "POST",
@@ -48,7 +48,7 @@ function Login() {
         body: JSON.stringify(form),
       })
         .then((result) => {
-          console.log("User login", result);
+          console.log("ورود کاربر", result);
         })
         .catch((error) => {
           console.log("Something went wrong ", error);
@@ -73,20 +73,20 @@ function Login() {
           <div>
             <img
               className="mx-auto h-12 w-auto"
-              src={require("../assets/logo.png")}
+              src={require("../assets/logo.jpeg")}
               alt="Your Company"
             />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              به سیستم وارد شوید
+               برای ورود شدن به سیستم ایمیل و پسورد خود را وارد کنید
             </h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            {/* <p className="mt-2 text-center text-sm text-gray-600">
               Or
               <span
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
                 start your 14-day free trial
               </span>
-            </p>
+            </p> */}
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             {/* <input type="hidden" name="remember" defaultValue="true" /> */}
@@ -101,8 +101,8 @@ function Login() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Email address"
+                  className="text-right rtl border p-2 relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="ایمیل آدرس"
                   value={form.email}
                   onChange={handleInputChange}
                 />
@@ -117,8 +117,8 @@ function Login() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Password"
+                  className="text-right rtl border p-2 relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="پسورد"
                   value={form.password}
                   onChange={handleInputChange}
                 />
@@ -137,7 +137,7 @@ function Login() {
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  Remember me
+                  مرا به یاد داشته تاش
                 </label>
               </div>
 
@@ -145,7 +145,7 @@ function Login() {
                 <span
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  Forgot your password?
+                  آیا رمز عبور خود را فراموش کرده‌اید؟
                 </span>
               </div>
             </div>
@@ -162,15 +162,16 @@ function Login() {
                     aria-hidden="true"
                   /> */}
                 </span>
-                Sign in
+                وارد شوید
               </button>
               <p className="mt-2 text-center text-sm text-gray-600">
-                Or{" "}
+              یا{" "}
                 <span
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  Don't Have an Account, Please{" "}
-                  <Link to="/register"> Register now </Link>
+                  اگر حساب کاربری ندارید،  لطفاً{" "}
+                  <Link to="/register"> حالا ثبت‌نام کنید
+                  </Link>
                 </span>
               </p>
             </div>
