@@ -1,4 +1,4 @@
-/*const express = require("express");
+const express = require("express");
 const { main } = require("./models/index");
 const productRoute = require("./router/product");
 const storeRoute = require("./router/store");
@@ -88,4 +88,4 @@ app.get("/testget", async (req,res)=>{
 // Here we are listening to the server
 app.listen(PORT, () => {
   console.log("I am live again");
-});*/
+});
