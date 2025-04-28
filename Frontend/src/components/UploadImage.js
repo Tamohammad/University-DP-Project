@@ -27,7 +27,7 @@ function UploadImage({ uploadImage }) {
         </svg>
         <span className="inline-block">
           {" "}
-          {fileName?.name ? fileName.name : "Choose file"}
+          {fileName?.name ? fileName.name : "انتخاب فایل"}
         </span>
       </label>
       <input

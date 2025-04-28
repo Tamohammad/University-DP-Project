@@ -29,7 +29,7 @@ function Register() {
       body: JSON.stringify(form),
     })
       .then((result) => {
-        alert("Successfully Registered, Now Login with your details");
+        alert("با موفقیت ثبت شدید، اکنون با جزئیات خود وارد شوید");
         navigate('/login')
         
       })
@@ -50,7 +50,7 @@ function Register() {
       .then((res) => res.json())
       .then((data) => {
         setForm({ ...form, imageUrl: data.url });
-        alert("Image Successfully Uploaded");
+        alert("تصویر با موفقیت بارگذاری شد");
       })
       .catch((error) => console.log(error));
   };
@@ -68,10 +68,10 @@ function Register() {
             <img
               className="mx-auto h-12 w-auto"
               src={require("../assets/logo.jpeg")}
-              alt="Your Company"
+              alt="شرکت شما"
             />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Register your account
+            حساب کاربری خود را ثبت کنید
             </h2>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -82,8 +82,8 @@ function Register() {
                   name="firstName"
                   type="text"
                   required
-                  className="relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="First Name"
+                  className=" text-right rtl border p-2 relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="نام"
                   value={form.firstName}
                   onChange={handleInputChange}
                 />
@@ -91,8 +91,8 @@ function Register() {
                   name="lastName"
                   type="text"
                   required
-                  className="relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Last Name"
+                  className=" text-right rtl border p-2 relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="تخلص"
                   value={form.lastName}
                   onChange={handleInputChange}
                 />
@@ -104,8 +104,8 @@ function Register() {
                   type="email"
                   autoComplete="email"
                   required
-                  className="relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Email address"
+                  className=" text-right rtl border p-2 relative block w-full rounded-t-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="آدرس ایمیل"
                   value={form.email}
                   onChange={handleInputChange}
                 />
@@ -117,8 +117,8 @@ function Register() {
                   type="password"
                   autoComplete="current-password"
                   required
-                  className="relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Password"
+                  className=" text-right rtl border p-2 relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="پسورد"
                   value={form.password}
                   onChange={handleInputChange}
                 />
@@ -129,8 +129,8 @@ function Register() {
                   type="number"
                   autoComplete="phoneNumber"
                   required
-                  className="relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                  placeholder="Phone Number"
+                  className=" text-right rtl border p-2 relative block w-full rounded-b-md border-0 py-1.5 px-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="شماره تلفن"
                   value={form.phoneNumber}
                   onChange={handleInputChange}
                 />
@@ -145,14 +145,14 @@ function Register() {
                   name="remember-me"
                   type="checkbox"
                   className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                  checked
+                  unchecked
                   required
                 />
                 <label
                   htmlFor="remember-me"
                   className="ml-2 block text-sm text-gray-900"
                 >
-                  I Agree Terms & Conditons
+                  من شرایط و ضوابط را می‌پذیرم
                 </label>
               </div>
 
@@ -160,7 +160,7 @@ function Register() {
                 <span
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  Forgot your password?
+                  رمز عبور خود را فراموش کرده‌اید؟
                 </span>
               </div>
             </div>
@@ -177,15 +177,15 @@ function Register() {
                       aria-hidden="true"
                     /> */}
                 </span>
-                Sign up
+                ثبت‌
               </button>
               <p className="mt-2 text-center text-sm text-gray-600">
-                Or{" "}
+              یا{" "}
                 <span
                   className="font-medium text-indigo-600 hover:text-indigo-500"
                 >
-                  Already Have an Account, Please
-                  <Link to="/login"> Signin now </Link>
+                 قبلاً حساب کاربری دارید، لطفاً
+                  <Link to="/login"> اکنون وارد شوید </Link>
                 </span>
               </p>
             </div>
