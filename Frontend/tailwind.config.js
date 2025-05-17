@@ -1,13 +1,11 @@
-/** @type {import('tailwindcss').Config} */
+const rtl = require('tailwindcss-rtl');
+
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ['./src/**/*.{js,jsx,ts,tsx,html}'],
   theme: {
     extend: {},
   },
   plugins: [
-    // ...
-    require("@tailwindcss/forms"),
+    rtl, // ← فقط همین، بدون پرانتز
   ],
 };
